@@ -310,8 +310,10 @@ footer {
         font-size: 0.9rem;
     }
 
-    .project-grid {
-        grid-template-columns: 1fr;
+    .projects .project-grid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+        background-color: lightblue;
     }
 }
 

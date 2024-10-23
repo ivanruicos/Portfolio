@@ -11,9 +11,16 @@ function longProject() {
 
     console.log(projectCards.length);
 
-    if(projectCards.length < 3){
+    const screenWidth = window.innerWidth;
+
+    if(screenWidth < 768){
+        projectGrid.style.gridTemplateColumns = 'repeat(1, 1fr)';
+    } else {
+        const columns = projectCards.length < 3 ? projectCards.length : 3;
         projectGrid.style.gridTemplateColumns = `repeat(${projectCards.length}, 1fr)`;
     }
+
+    window.addEventListener('resize', longProject);
 }
 
 function popup() {
