@@ -15,6 +15,11 @@ body {
 header {
     background: #333;
     padding: 20px;
+    position: fixed; /* Hace que el header se mantenga fijo en la parte superior */
+    top: 0; /* Posiciona el header en la parte superior de la página */
+    left: 0;
+    width: 100%; /* Hace que el header ocupe todo el ancho de la pantalla */
+    z-index: 1000;
 }
 
 .navbar {
@@ -23,6 +28,12 @@ header {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
 }
 
 .logo {
