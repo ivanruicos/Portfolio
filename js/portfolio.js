@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", iniciar, false);
 function iniciar(){
     longProject();
     popup();
+    sendForm();
 }
 
 function longProject() {
@@ -52,4 +53,43 @@ function popup() {
             event.target.style.display = 'none';
         }
     });
+}
+
+function sendForm() {
+    const form = document.getElementById('contactForm');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const formData = new FormData(form);
+
+        // Hacer la solicitud POST de manera asíncrona
+        fetch('https://formsubmit.co/ruizcostaivan9@gmail.com', {
+            method: 'POST',
+            body: formData
+        })
+        .then (response => {
+            if(response.ok) {
+                showMessage('Correo enviado con éxito', form);
+                form.reset();
+            } else {
+                throw new Error('Error en el envío del formulario');
+            }
+        })
+        .catch (error => {
+            showMessage('Hubo un error al enviar el correo');
+            console.error('Error al enviar el formulario:', error);
+        });
+    });
+}
+
+function showMessage(message, form) {
+    const messageContainer = document.createElement('div');
+    messageContainer.classList.add('form-message');
+    messageContainer.textContent = message;
+    form.appendChild(messageContainer);
+    
+    // Eliminar el mensaje después de 5 segundos
+    setTimeout(() => {
+        messageContainer.remove();
+    }, 5000);
 }
