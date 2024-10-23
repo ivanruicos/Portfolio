@@ -86,10 +86,23 @@ header {
     z-index: -1;
 }
 
+video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover; /* Hace que el video cubra completamente el contenedor sin distorsionarse */
+    z-index: -1;
+    background-color: transparent;
+}
+
 .hero-text{
     position: relative;
     z-index: 1;
     color: #fff;
+    text-align: center;
 }
 
 .hero-text h2 {
@@ -288,6 +301,15 @@ footer {
     .nav-links li {
         margin-left: 0;
         margin-bottom: 10px;
+    }
+
+    .video-container {
+        height: 100vh; /* Ajusta la altura del video para móviles */
+    }
+
+    video {
+        width: 100%;
+        height: auto;
     }
 
     .hero-text h2 {
