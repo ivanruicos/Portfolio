@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio de Iván</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/portfolio.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h1 class="logo">Iván Ruiz Costa</h1>
+            <ul class="nav-links">
+                <li><a href="#about">Acerca de mí</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="video-container">
+            <video autoplay muted loop>
+                <source src="img/fullHD.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="hero-text">
+            <h2>Hola, soy Iván</h2>
+            <p>Desarrollador Web</p>
+            <a href="#projects" class="btn">Ver proyectos</a>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <h2>Acerca de mí</h2>
+        <p>
+            Soy un apasionado por la tecnología, el diseño, seguir aprendiendo y la creación de soluciones que impacten positivamente. 
+            He completado un CFGS de Desarrollo de Aplicaciones Web y he realizado diversos proyectos que me han permitido mejorar mis habilidades.
+        </p>
+    </section>
+
+    <section class="projects" id="projects">
+        <h2>Proyectos</h2>
+        <div class="project-grid">
+            <div class="project-card" data-modal="modal-project1">
+                <img src="img/proyecto1.jpg" alt="proyecto1">
+                <h3>Proyecto 1</h3>
+                <p>
+                    Este proyecto trata sobre una página web de un taller mecánico, para mostrar la información del taller e información para cada cliente de sus vehículos. 
+                </p>
+                <a href="https://github.com/ivanruicos/ToolBox.git" class="btn" target="_blank">Ver proyecto en GitHub</a>
+            </div>
+            <div class="project-card" data-modal="modal-project2">
+                <img src="img/proyecto2.jpg" alt="proyecto2">
+                <h3>Proyecto 2</h3>
+                <p>
+                    Este proyecto trata sobre una charanga de la ciudad de Segovia, llamada "La Segoviana". Esta charanga está compuesta solo de mujeres, llevan poco tiempo
+                    pero lo están haciendo muy bien.
+                </p>
+                <a href="https://github.com/ivanruicos/Charanga" class="btn" target="_blank">Ver proyecto en GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="popup" id="modal-project1">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <h2>Detalles del proyecto 1</h2>
+            <p>Información extra</p>
+        </div>
+    </div>
+
+    <div class="popup" id="modal-project2">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <h2>Detalles del proyecto 2</h2>
+            <p>Información extra</p>
+        </div>
+    </div>
+
+    <section class="contact" id="contact">
+        <h2>Contacto</h2>
+        <form action="https://formsubmit.co/ruizcostaivan9@gmail.com" method="post">
+            <input type="text" name="nombre" placeholder="Nombre" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="mensaje" rows="5" placeholder="Mensaje" required></textarea>
+            <button type="submit" class="btn">Enviar</button>
+
+            <input type="hidden" name="_next" value="http://localhost/Portfolio/">
+            <input type="hidden" name="_captcha" value="false">
+        </form>
+
+        <br>
+        
+        <a href="https://www.infojobs.net/candidate/cv/view/index.xhtml" target="_blank">Mi perfil de InfoJobs</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Iván Ruiz Costa</p>
+    </footer>
+</body>
+</html>
