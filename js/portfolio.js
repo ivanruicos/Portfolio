@@ -62,6 +62,8 @@ function sendForm() {
         e.preventDefault();
         const formData = new FormData(form);
 
+        showMessage('Enviando correo...', form);
+
         // Hacer la solicitud POST de manera asíncrona
         fetch('https://formsubmit.co/ruizcostaivan9@gmail.com', {
             method: 'POST',
@@ -83,13 +85,20 @@ function sendForm() {
 }
 
 function showMessage(message, form) {
-    const messageContainer = document.createElement('div');
-    messageContainer.classList.add('form-message');
+    let messageContainer = form.querySelector('.form-message');
+
+    if(!messageContainer){
+        messageContainer = document.createElement('div');
+        messageContainer.classList.add('form-message');
+        form.appendChild(messageContainer);
+    }
+    
     messageContainer.textContent = message;
-    form.appendChild(messageContainer);
     
     // Eliminar el mensaje después de 5 segundos
-    setTimeout(() => {
-        messageContainer.remove();
-    }, 5000);
+    if(message !== 'Enviando correo...'){
+        setTimeout(() => {
+            messageContainer.remove();
+        }, 5000);
+    }
 }
