@@ -355,7 +355,7 @@ footer {
 
     .popup-content {
         width: 90%;
-        max-height: 90%;
+        max-height: 60%;
         padding: 15px;
         margin-top: 10%;
     }
