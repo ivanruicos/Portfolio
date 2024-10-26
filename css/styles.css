@@ -353,11 +353,16 @@ footer {
         grid-template-columns: repeat(1, 1fr);
     }
 
+    .popup {
+        overflow-y: auto;
+    }
+
     .popup-content {
         width: 90%;
         max-height: 60%;
         padding: 15px;
-        margin-top: 10%;
+        margin-top: 20%;
+        overflow-y: auto;
     }
     
     .popup-content h3 {
