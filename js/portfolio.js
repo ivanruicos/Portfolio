@@ -37,6 +37,7 @@ function popup() {
             const modalId = this.getAttribute('data-modal');
             const modal = document.getElementById(modalId);
             modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
         })
     });
 
@@ -44,6 +45,7 @@ function popup() {
     closeBtns.forEach(button => {
         button.addEventListener('click', function() {
             this.closest('.popup').style.display = 'none';
+            document.body.style.overflow = '';
         })
     });
 
@@ -51,6 +53,7 @@ function popup() {
     window.addEventListener('click', function(event) {
         if (event.target.classList.contains('popup')) {
             event.target.style.display = 'none';
+            document.body.style.overflow = '';
         }
     });
 }
